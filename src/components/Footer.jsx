@@ -41,7 +41,7 @@ const Footer = () => {
                                     <circle cx={1} cy={1} r={1} />
                                 </svg>
                                 <div className="text-gray-600">
-                                    CEO of Workcation
+                                    Young passionate developer
                                 </div>
                             </div>
                         </figcaption>

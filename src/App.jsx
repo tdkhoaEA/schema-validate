@@ -31,7 +31,7 @@ function App() {
                             Data validator
                         </h2>
                         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                            Validate with Schema Draft 2020-12
+                            Validate with Data
                         </p>
                         {/* <p className="mt-6 text-lg leading-8 text-gray-600">
                             Quis tellus eget adipiscing convallis sit sit eget

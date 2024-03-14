@@ -26,7 +26,7 @@ function Data({ schema }) {
             {/* <h2 className="p-2 font-bold text-lg">Input Data Schema</h2> */}
             <CodeMirror
                 value={data}
-                height="300px"
+                height="400px"
                 onChange={onChange}
                 theme="dark"
             />
