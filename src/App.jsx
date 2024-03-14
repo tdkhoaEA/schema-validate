@@ -4,9 +4,10 @@ import Code from './components/Code';
 import Data from './components/Data';
 import Footer from './components/Footer';
 import { useState } from 'react';
+import { sampleSchemaString } from './constants/sample';
 
 function App() {
-    const [schema, setSchema] = useState('');
+    const [schema, setSchema] = useState(sampleSchemaString);
     return (
         <>
             <Header />
@@ -22,7 +23,7 @@ function App() {
                         </p>
                     </div>
                 </div>
-                <Code updateSchema={(val) => setSchema(val)} />
+                <Code sample={schema} updateSchema={(val) => setSchema(val)} />
             </div>
             <div className="bg-white sm:pt-8">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">

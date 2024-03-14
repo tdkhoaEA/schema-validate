@@ -1,9 +1,10 @@
 import { useState, useCallback } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { useDataValidator } from '../hooks/validator';
+import { sampleDataString } from '../constants/sample';
 
 function Data({ schema }) {
-    const [data, setData] = useState('');
+    const [data, setData] = useState(sampleDataString);
     const { isValid, errors, validateData } = useDataValidator(schema);
 
     // Define onChange callback to update the schema state
@@ -30,14 +31,6 @@ function Data({ schema }) {
                 onChange={onChange}
                 theme="dark"
             />
-            <div className="w-full flex justify-center">
-                <button
-                    className="mt-4 mx-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    onClick={handleValidateSchema} // Pass handleValidateSchema callback to the button's onClick event
-                >
-                    Validate Data
-                </button>
-            </div>
             <div className="mt-4">
                 {isValid && (
                     <p style={{ color: 'green' }}>
@@ -56,6 +49,14 @@ function Data({ schema }) {
                         </ul>
                     </div>
                 )}
+            </div>
+            <div className="w-full flex justify-center">
+                <button
+                    className="mt-4 mx-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    onClick={handleValidateSchema} // Pass handleValidateSchema callback to the button's onClick event
+                >
+                    Validate Data
+                </button>
             </div>
         </div>
     );

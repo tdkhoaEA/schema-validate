@@ -2,8 +2,8 @@ import { useState, useCallback } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { useJsonSchemaValidator } from '../hooks/validator';
 
-function Code({ updateSchema }) {
-    const [schema, setSchema] = useState('');
+function Code({ sample, updateSchema }) {
+    const [schema, setSchema] = useState(sample);
     const { isValid, errors, validateSchema } = useJsonSchemaValidator();
 
     // Define onChange callback to update the schema state
@@ -23,21 +23,12 @@ function Code({ updateSchema }) {
 
     return (
         <div className="px-4 my-6 w-1/2 mx-auto">
-            {/* <h2 className="p-2 font-bold text-lg">Input Schema</h2> */}
             <CodeMirror
                 value={schema}
                 height="400px"
-                onChange={onChange} // Pass onChange callback to CodeMirror component
+                onChange={onChange}
                 theme="dark"
             />
-            <div className="w-full flex justify-center">
-                <button
-                    className="mt-4 mx-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    onClick={handleValidateSchema} // Pass handleValidateSchema callback to the button's onClick event
-                >
-                    Validate Schema
-                </button>
-            </div>
             <div className="mt-4">
                 {isValid && (
                     <p style={{ color: 'green' }}>
@@ -56,6 +47,14 @@ function Code({ updateSchema }) {
                         </ul>
                     </div>
                 )}
+            </div>
+            <div className="w-full flex justify-center">
+                <button
+                    className="mt-4 mx-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    onClick={handleValidateSchema}
+                >
+                    Validate Schema
+                </button>
             </div>
         </div>
     );
