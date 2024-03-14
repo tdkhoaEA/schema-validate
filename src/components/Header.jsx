@@ -1,12 +1,16 @@
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import Logo from '../assets/logo.svg';
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    {
+        name: 'Docs',
+        href: 'https://json-schema.org/learn/getting-started-step-by-step',
+    },
+    { name: 'Validate', href: 'https://json-schema.org/implementations' },
+    // { name: 'Marketplace', href: '#' },
+    // { name: 'Company', href: '#' },
 ];
 
 export default function Header() {
@@ -23,7 +27,8 @@ export default function Header() {
                         <span className="sr-only">Your Company</span>
                         <img
                             className="h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                            // src="https://json-schema.org/img/logos/logo-blue.svg"
+                            src={Logo}
                             alt=""
                         />
                     </a>
@@ -50,12 +55,12 @@ export default function Header() {
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a
+                    {/* <a
                         href="#"
                         className="text-sm font-semibold leading-6 text-gray-900"
                     >
                         Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
+                    </a> */}
                 </div>
             </nav>
             <Dialog

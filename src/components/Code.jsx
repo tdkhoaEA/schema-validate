@@ -22,11 +22,11 @@ function Code({ updateSchema }) {
     }, [schema, validateSchema]); // Include schema and validateSchema in the dependencies array
 
     return (
-        <div className="px-4 my-6">
+        <div className="px-4 my-6 w-1/2 mx-auto">
             {/* <h2 className="p-2 font-bold text-lg">Input Schema</h2> */}
             <CodeMirror
                 value={schema}
-                height="300px"
+                height="400px"
                 onChange={onChange} // Pass onChange callback to CodeMirror component
                 theme="dark"
             />
