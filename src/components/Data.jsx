@@ -23,7 +23,7 @@ function Data({ schema }) {
     }, [data, validateData]); // Include schema and validateSchema in the dependencies array
 
     return (
-        <div className="px-4 my-6 w-1/2 mx-auto">
+        <div className="px-4 my-6 w-4/5 mx-auto">
             {/* <h2 className="p-2 font-bold text-lg">Input Data Schema</h2> */}
             <CodeMirror
                 value={data}

@@ -22,7 +22,7 @@ function Code({ sample, updateSchema }) {
     }, [schema, validateSchema]); // Include schema and validateSchema in the dependencies array
 
     return (
-        <div className="px-4 my-6 w-1/2 mx-auto">
+        <div className="px-4 my-6 w-4/5 mx-auto">
             <CodeMirror
                 value={schema}
                 height="400px"
